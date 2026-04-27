@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>BoxMedia – Packs Communication CrossFit</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--noir:#0f0f0f;--gris:#1a1a1a;--gris2:#2a2a2a;--corail:#E8895A;--corail2:#d47242;--blanc:#f5f5f5;--texte:#d0d0d0}
+body{background:var(--noir);color:var(--blanc);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filter:blur(8px);z-index:100;padding:.85rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
+.logo{font-size:1.2rem;font-weight:900;letter-spacing:2px;color:var(--blanc)}
+.logo span{color:var(--corail)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{font-size:.8rem;letter-spacing:1px;color:var(--texte);text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--corail)}
+.nav-cta{background:var(--corail);color:#fff !important;padding:.4rem 1rem;border-radius:4px;font-weight:700 !important}
+.nav-cta:hover{background:var(--corail2) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--blanc);border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(15,15,15,0.98);padding:1.5rem;z-index:99;border-bottom:1px solid #222;flex-direction:column;gap:1rem}
+.mobile-menu a{font-size:.9rem;letter-spacing:1px;text-transform:uppercase;color:var(--texte);padding:.5rem 0;border-bottom:1px solid #222}
+.mobile-menu .nav-cta{text-align:center;padding:.75rem;border-radius:4px;border:none}
+.mobile-menu.open{display:flex}
+
+/* SECTIONS */
+section{padding:4rem 1.5rem}
+.container{max-width:1100px;margin:0 auto;width:100%}
+.section-label{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--corail);margin-bottom:.6rem}
+.section-title{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;margin-bottom:.75rem;line-height:1.2}
+.section-sub{color:var(--texte);font-size:.95rem;margin-bottom:2.5rem;max-width:560px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 4rem;background:radial-gradient(ellipse at 50% 60%,#1f1008 0%,#0f0f0f 65%)}
+.hero-badge{display:inline-block;background:#1f1008;border:1px solid var(--corail);color:var(--corail);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;margin-bottom:1.25rem}
+.hero h1{font-size:clamp(2rem,6vw,4.2rem);font-weight:900;line-height:1.1;max-width:800px;margin:0 auto 1.25rem}
+.hero h1 span{color:var(--corail)}
+.hero p{font-size:clamp(.9rem,2vw,1.1rem);color:var(--texte);max-width:540px;margin:0 auto 2rem}
+.btn-group{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.btn{display:inline-block;background:var(--corail);color:#fff;padding:.8rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;letter-spacing:.5px;cursor:pointer;border:none;transition:background .2s,transform .1s;text-align:center}
+.btn:hover{background:var(--corail2);transform:translateY(-1px)}
+.btn-outline{background:transparent;border:2px solid var(--corail);color:var(--corail)}
+.btn-outline:hover{background:var(--corail);color:#fff}
+.hero-stats{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:3rem}
+.hero-stats div{text-align:center;min-width:80px}
+.hero-stats strong{display:block;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:var(--corail)}
+.hero-stats span{font-size:.75rem;color:var(--texte);text-transform:uppercase;letter-spacing:1px}
+
+/* ÉQUIPE BANNIÈRE */
+.team-banner{position:relative;width:100%;height:clamp(260px,45vw,420px);overflow:hidden}
+.team-banner img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(0.55)}
+.team-banner-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
+.team-banner-overlay p{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--corail);margin-bottom:.6rem}
+.team-banner-overlay h2{font-size:clamp(1.4rem,4vw,2.8rem);font-weight:900;color:#fff;line-height:1.15}
+
+/* TEAM CARDS */
+.team-section{background:var(--gris);padding:3rem 1.5rem 4rem}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;max-width:1100px;margin:0 auto}
+.team-card{background:#111;border:1px solid #2a2a2a;border-radius:12px;padding:2rem;text-align:center}
+.team-avatar{width:64px;height:64px;border-radius:50%;background:var(--corail);margin:0 auto 1rem;display:flex;align-items:center;justify-content:center;font-size:1.4rem;font-weight:900;color:#fff}
+.team-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.2rem}
+.team-card .role{font-size:.75rem;color:var(--corail);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.75rem}
+.team-card p{font-size:.875rem;color:var(--texte);line-height:1.65}
+
+/* PROBLÈME */
+.prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2rem}
+.prob-card{background:#222;border:1px solid #333;border-radius:10px;padding:1.25rem}
+.prob-icon{font-size:1.4rem;margin-bottom:.6rem}
+.prob-card h4{font-size:.9rem;font-weight:700;margin-bottom:.35rem}
+.prob-card p{font-size:.82rem;color:var(--texte)}
+.arrow-section{text-align:center;padding:1.5rem 0;font-size:1.8rem;color:var(--corail)}
+
+/* PACKS */
+.packs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5rem;align-items:start}
+.pack{background:var(--gris);border:1px solid #333;border-radius:12px;padding:2rem 1.75rem;position:relative;transition:transform .2s,border-color .2s}
+.pack:hover{transform:translateY(-4px);border-color:#555}
+.pack.popular{border:2px solid var(--corail)}
+.pack-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--corail);color:#fff;font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.28rem .9rem;border-radius:20px;white-space:nowrap}
+.pack-name{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--texte);margin-bottom:.25rem}
+.pack-price{font-size:clamp(2.2rem,5vw,3rem);font-weight:900;color:var(--blanc);margin-bottom:1.5rem;line-height:1}
+.pack-price span{font-size:.95rem;font-weight:400;color:var(--texte)}
+.pack ul{list-style:none;margin-bottom:1.75rem}
+.pack ul li{padding:.4rem 0;border-bottom:1px solid #2a2a2a;font-size:.875rem;color:var(--texte);display:flex;gap:.6rem;align-items:flex-start}
+.pack ul li::before{content:"✓";color:var(--corail);font-weight:700;flex-shrink:0}
+.pack ul li.extra{color:var(--blanc)}
+.pack .btn{width:100%;text-align:center;padding:.75rem}
+.optional-box{background:var(--gris);border:2px solid var(--corail);border-radius:12px;padding:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.optional-box h3{font-size:1rem;font-weight:700}
+.optional-box p{font-size:.875rem;color:var(--texte)}
+.optional-price{font-size:1.8rem;font-weight:900;color:var(--corail);white-space:nowrap}
+
+/* FORMULAIRE */
+.form-bg{background:var(--gris)}
+.form-wrap{background:#111;border:1px solid #2a2a2a;border-radius:16px;padding:clamp(1.5rem,5vw,3rem);max-width:640px;margin:0 auto}
+.form-wrap h2{font-size:clamp(1.4rem,4vw,1.8rem);font-weight:800;margin-bottom:.4rem}
+.form-wrap>p{color:var(--texte);margin-bottom:1.75rem;font-size:.9rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:.75rem;letter-spacing:1px;text-transform:uppercase;color:var(--texte);margin-bottom:.4rem}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:#1a1a1a;border:1px solid #333;color:var(--blanc);padding:.7rem .9rem;border-radius:6px;font-size:.9rem;font-family:inherit;transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group textarea:focus{border-color:var(--corail)}
+.form-group select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+.form-group select option{background:#1a1a1a}
+.form-group textarea{resize:vertical;min-height:100px}
+.form-submit{width:100%;padding:.9rem;font-size:.95rem;font-weight:700;letter-spacing:.5px;margin-top:.4rem}
+.success-msg{display:none;background:#1a2e1a;border:1px solid #2d5a2d;color:#7bc47b;padding:1rem 1.5rem;border-radius:8px;text-align:center;margin-top:1rem;font-size:.9rem}
+
+/* FOOTER */
+footer{background:#080808;border-top:1px solid #1a1a1a;padding:1.75rem 1.5rem;text-align:center;color:#555;font-size:.82rem}
+footer span{color:var(--corail)}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .form-row{grid-template-columns:1fr}
+  .optional-box{flex-direction:column;text-align:center}
+  .packs-grid{grid-template-columns:1fr}
+  .prob-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .prob-grid{grid-template-columns:1fr}
+  .hero-stats{gap:1.25rem}
+  .btn-group .btn{width:100%;max-width:280px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">BOX<span>MEDIA</span></div>
+  <ul class="nav-links">
+    <li><a href="#equipe">L'équipe</a></li>
+    <li><a href="#packs">Packs</a></li>
+    <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="ham">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#equipe" onclick="closeMenu()">L'équipe</a>
+  <a href="#packs" onclick="closeMenu()">Les packs</a>
+  <a href="#contact" class="nav-cta" onclick="closeMenu()">Demander un devis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge">Communication clé en main pour les box CrossFit</div>
+    <h1>Votre box mérite<br/>une com à <span>son niveau</span></h1>
+    <p>Vidéo, photo, design, réseaux sociaux — on s'occupe de tout. Vous gérez votre box, on gère votre image.</p>
+    <div class="btn-group">
+      <a href="#contact" class="btn">Demander mon pack</a>
+      <a href="#packs" class="btn btn-outline">Voir les packs</a>
+    </div>
+    <div class="hero-stats">
+      <div><strong>3</strong><span>Packs disponibles</span></div>
+      <div><strong>100%</strong><span>Clé en main</span></div>
+      <div><strong>2</strong><span>Experts dédiés</span></div>
+      <div><strong>7 ans</strong><span>d'expérience CrossFit</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<div id="equipe">
+  <div class="team-banner">
+    <img src="https://i.postimg.cc/Sxjt9sk3/PACKAGE-(3).jpg" alt="Didier et Océane"/>
+    <div class="team-banner-overlay">
+      <p>Qui sommes-nous</p>
+      <h2>Un duo 100% dédié<br/>aux box CrossFit</h2>
+    </div>
+  </div>
+  <div class="team-section">
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">D</div>
+        <h3>Didier</h3>
+        <p class="role">Vidéaste</p>
+        <p>Présent sur les plus grandes compétitions françaises depuis <strong style="color:var(--corail)">7 ans</strong>, Didier filme des athlètes d'exception — mais n'a jamais oublié ceux du quotidien. Sa vocation ? Faire découvrir le CrossFit au plus grand nombre. Car il sait, pour l'avoir vécu, que le CrossFit fait changer des vies.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">O</div>
+        <h3>Océane</h3>
+        <p class="role">Community Manager & Photographe</p>
+        <p><strong style="color:var(--corail)">6 ans d'expérience</strong>, dont 2 ans en totale indépendance. Elle a quitté son agence pour mettre son expertise au service des box CrossFit. Passionnée de CF et de communication, elle n'imaginait pas de plus beau mélange.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLÈME -->
+<section style="background:var(--noir)">
+  <div class="container">
+    <p class="section-label">Le constat</p>
+    <h2 class="section-title">Sans com pro, votre box reste invisible</h2>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-icon">📵</div><h4>Pas de présence en ligne</h4><p>Vos futurs membres cherchent sur Instagram avant de pousser la porte. Êtes-vous là ?</p></div>
+      <div class="prob-card"><div class="prob-icon">📷</div><h4>Visuels amateurs</h4><p>Des photos floues ou un feed sans cohérence renvoient une image qui ne vous ressemble pas.</p></div>
+      <div class="prob-card"><div class="prob-icon">⏱</div><h4>Pas le temps</h4><p>Entre la programmation, les cours et la gestion, la com passe toujours après. On s'en charge.</p></div>
+      <div class="prob-card"><div class="prob-icon">📈</div><h4>Pas de croissance</h4><p>Sans contenu régulier et professionnel, difficile d'attirer de nouveaux membres.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow-section">↓</div>
+
+<!-- PACKS -->
+<section id="packs" style="background:var(--gris)">
+  <div class="container">
+    <p class="section-label">Nos offres</p>
+    <h2 class="section-title">Choisissez votre pack</h2>
+    <p class="section-sub">Trois niveaux d'accompagnement, un seul objectif : faire briller votre box sur les réseaux.</p>
+    <div class="packs-grid">
+      <div class="pack">
+        <p class="pack-name">Pack Essentiel</p>
+        <div class="pack-price">800€ <span>/ pack</span></div>
+        <ul>
+          <li>1 carrousel graphique</li>
+          <li>1 vidéo de présentation</li>
+          <li>Script inclus</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Je choisis ce pack</a>
+      </div>
+      <div class="pack popular">
+        <div class="pack-badge">⭐ Le plus populaire</div>
+        <p class="pack-name">Pack Populaire</p>
+        <div class="pack-price">1 900€ <span>/ pack</span></div>
+        <ul>
+          <li class="extra">3 carrousels graphiques</li>
+          <li class="extra">6 vidéos</li>
+          <li class="extra">Scripts inclus</li>
+          <li class="extra">50 photos d'ambiance retouchées</li>
+        </ul>
+        <a href="#contact" class="btn">Je choisis ce pack</a>
+      </div>
+      <div class="pack">
+        <p class="pack-name">Pack Premium</p>
+        <div class="pack-price">2 700€ <span>/ pack</span></div>
+        <ul>
+          <li class="extra">3 carrousels graphiques</li>
+          <li class="extra">7 vidéos</li>
+          <li class="extra">Scripts inclus</li>
+          <li class="extra">80 photos d'ambiance retouchées</li>
+          <li class="extra">Écriture des captions</li>
+          <li class="extra">Programmation de tous les posts</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline">Je choisis ce pack</a>
+      </div>
+    </div>
+    <div class="optional-box">
+      <div>
+        <h3>🎨 Option Template Instagram</h3>
+        <p>Pack de 8 templates personnalisés aux couleurs de votre box pour un feed cohérent et professionnel.</p>
+      </div>
+      <div class="optional-price">+420€</div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMULAIRE -->
+<section id="contact" class="form-bg">
+  <div class="container">
+    <div class="form-wrap">
+      <h2>Demandez votre devis</h2>
+      <p>On vous répond sous 24h. Aucun engagement.</p>
+      <div class="form-row">
+        <div class="form-group"><label>Prénom</label><input type="text" id="prenom" placeholder="John"/></div>
+        <div class="form-group"><label>Nom</label><input type="text" id="nom" placeholder="Doe"/></div>
+      </div>
+      <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="john@mabox.com"/></div>
+      <div class="form-group"><label>Nom de votre box</label><input type="text" id="box" placeholder="CrossFit Nord"/></div>
+      <div class="form-group">
+        <label>Pack souhaité</label>
+        <select id="pack">
+          <option value="">— Sélectionnez un pack —</option>
+          <option>Pack Essentiel – 800€</option>
+          <option>Pack Populaire – 1 900€</option>
+          <option>Pack Premium – 2 700€</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Votre message (optionnel)</label><textarea id="message" placeholder="Parlez-nous de votre box, vos objectifs, vos questions…"></textarea></div>
+      <button class="btn form-submit" onclick="submitForm()">Envoyer ma demande →</button>
+      <div class="success-msg" id="success">✅ Message envoyé ! On revient vers vous sous 24h.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p><span>BoxMedia</span> · Communication clé en main pour les box CrossFit</p>
+  <p style="margin-top:.4rem">© 2025 · Fait avec passion depuis le Nord</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+function closeMenu(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+function submitForm(){
+  const prenom=document.getElementById('prenom').value.trim();
+  const email=document.getElementById('email').value.trim();
+  if(!prenom||!email){alert('Merci de renseigner au moins votre prénom et votre email.');return;}
+  document.querySelector('.form-submit').style.display='none';
+  document.getElementById('success').style.display='block';
+}
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    const el=document.querySelector(a.getAttribute('href'));
+    if(el) el.scrollIntoView({behavior:'smooth'});
+  });
+});
+document.querySelectorAll('.pack a[href="#contact"]').forEach(link=>{
+  link.addEventListener('click',()=>{
+    const packName=link.closest('.pack').querySelector('.pack-name').textContent;
+    setTimeout(()=>{
+      const sel=document.getElementById('pack');
+      for(let i=0;i<sel.options.length;i++){
+        if(sel.options[i].text.includes(packName.replace('Pack ',''))) {sel.selectedIndex=i;break;}
+      }
+    },600);
+  });
+});
+</script>
+</body>
+</html>
