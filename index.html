@@ -276,6 +276,7 @@ footer span{color:var(--corail)}
       </div>
       <div class="form-group"><label>Email</label><input type="email" id="email" placeholder="john@mabox.com"/></div>
       <div class="form-group"><label>Nom de votre box</label><input type="text" id="box" placeholder="CrossFit Nord"/></div>
+      <div class="form-group"><label>Téléphone</label><input type="tel" id="tel" placeholder="+33 6 00 00 00 00"/></div>
       <div class="form-group">
         <label>Pack souhaité</label>
         <select id="pack">
@@ -313,6 +314,7 @@ async function submitForm(){
   const box=document.getElementById('box').value.trim();
   const pack=document.getElementById('pack').value;
   const message=document.getElementById('message').value.trim();
+  const tel=document.getElementById('tel').value.trim();
   if(!prenom||!email){alert('Merci de renseigner au moins votre prénom et votre email.');return;}
   const btn=document.querySelector('.form-submit');
   btn.textContent='Envoi en cours…';btn.disabled=true;
@@ -320,7 +322,7 @@ async function submitForm(){
     const res=await fetch('https://formspree.io/f/mzdyqnrd',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({prenom,nom,email,box,pack,message})
+      body:JSON.stringify({prenom,nom,email,tel,box,pack,message})
     });
     if(res.ok){
       btn.style.display='none';
