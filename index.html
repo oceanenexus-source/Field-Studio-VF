@@ -306,12 +306,33 @@ function toggleMenu(){
 function closeMenu(){
   document.getElementById('mobileMenu').classList.remove('open');
 }
-function submitForm(){
+async function submitForm(){
   const prenom=document.getElementById('prenom').value.trim();
+  const nom=document.getElementById('nom').value.trim();
   const email=document.getElementById('email').value.trim();
+  const box=document.getElementById('box').value.trim();
+  const pack=document.getElementById('pack').value;
+  const message=document.getElementById('message').value.trim();
   if(!prenom||!email){alert('Merci de renseigner au moins votre prénom et votre email.');return;}
-  document.querySelector('.form-submit').style.display='none';
-  document.getElementById('success').style.display='block';
+  const btn=document.querySelector('.form-submit');
+  btn.textContent='Envoi en cours…';btn.disabled=true;
+  try{
+    const res=await fetch('https://formspree.io/f/mzdyqnrd',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({prenom,nom,email,box,pack,message})
+    });
+    if(res.ok){
+      btn.style.display='none';
+      document.getElementById('success').style.display='block';
+    } else {
+      btn.textContent='Envoyer ma demande →';btn.disabled=false;
+      alert('Une erreur est survenue. Veuillez réessayer.');
+    }
+  } catch(e){
+    btn.textContent='Envoyer ma demande →';btn.disabled=false;
+    alert('Erreur réseau. Veuillez réessayer.');
+  }
 }
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
