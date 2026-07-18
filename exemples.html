@@ -64,8 +64,9 @@ section{padding:4rem 1.5rem}
 
 /* AVANT / APRÈS */
 .avantapres-section{background:var(--noir)}
-.avantapres-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
+.avantapres-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:700px;margin:0 auto}
 .aa-block{border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
+.aa-block img{width:100%;display:block;object-fit:contain;max-height:400px;background:#111}
 .aa-label{padding:.6rem 1rem;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-align:center}
 .aa-label.avant{background:#222;color:#888}
 .aa-label.apres{background:var(--corail);color:#fff}
@@ -176,13 +177,13 @@ footer span{color:var(--corail)}
       <!-- AVANT -->
       <div class="aa-block">
         <div class="aa-label avant">Avant</div>
-        <img src="https://i.postimg.cc/JHRCWbfY/4.jpg" style="width:100%;display:block;object-fit:cover;max-height:500px"/>
+        <img src="https://i.postimg.cc/JHRCWbfY/4.jpg" style="width:100%;display:block"/>
         <div class="aa-caption">Feed non uniforme, photos sans cohérence visuelle</div>
       </div>
       <!-- APRÈS -->
       <div class="aa-block">
         <div class="aa-label apres">Après</div>
-        <img src="https://i.postimg.cc/jnRYrzpm/5.jpg" style="width:100%;display:block;object-fit:cover;max-height:500px"/>
+        <img src="https://i.postimg.cc/jnRYrzpm/5.jpg" style="width:100%;display:block"/>
         <div class="aa-caption">Feed uniforme, identité visuelle forte et cohérente</div>
       </div>
     </div>
