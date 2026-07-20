@@ -10,7 +10,6 @@
 body{background:var(--noir);color:var(--blanc);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
-/* NAV */
 nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filter:blur(8px);z-index:100;padding:.75rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
 .logo img{height:38px;width:auto;display:block}
 .nav-links{display:flex;gap:1.5rem;list-style:none}
@@ -25,7 +24,6 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .mobile-menu .nav-cta{text-align:center;padding:.75rem;border-radius:4px;border:none}
 .mobile-menu.open{display:flex}
 
-/* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem 4rem;background:radial-gradient(ellipse at 50% 60%,#1f1008 0%,#0f0f0f 65%)}
 .hero-badge{display:inline-block;background:#1f1008;border:1px solid var(--corail);color:var(--corail);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;margin-bottom:1.25rem}
 .hero h1{font-size:clamp(2rem,6vw,4.2rem);font-weight:900;line-height:1.1;max-width:800px;margin:0 auto 1.25rem}
@@ -41,19 +39,13 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .hero-stats strong{display:block;font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;color:var(--corail)}
 .hero-stats span{font-size:.75rem;color:var(--texte);text-transform:uppercase;letter-spacing:1px}
 
-/* VIDÉO PRÉSENTATION */
 .video-section{background:var(--noir);padding:4rem 1.5rem;text-align:center}
 .section-label{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--corail);margin-bottom:.6rem}
 .section-title{font-size:clamp(1.5rem,4vw,2.4rem);font-weight:800;margin-bottom:.75rem;line-height:1.2}
 .section-sub{color:var(--texte);font-size:.95rem;margin-bottom:2rem;max-width:560px;margin-left:auto;margin-right:auto}
 .video-wrapper{position:relative;max-width:860px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
 .video-wrapper iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
-.video-placeholder{width:100%;aspect-ratio:16/9;background:#1a1a1a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;cursor:pointer}
-.video-placeholder .play-icon{width:64px;height:64px;border-radius:50%;background:var(--corail);display:flex;align-items:center;justify-content:center}
-.video-placeholder .play-icon svg{width:24px;height:24px;fill:#fff;margin-left:4px}
-.video-placeholder p{color:var(--texte);font-size:.9rem}
 
-/* ÉQUIPE */
 .team-banner{position:relative;width:100%;height:clamp(260px,45vw,420px);overflow:hidden}
 .team-banner img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:brightness(0.55)}
 .team-banner-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem}
@@ -67,7 +59,6 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .team-card .role{font-size:.75rem;color:var(--corail);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.75rem}
 .team-card p{font-size:.875rem;color:var(--texte);line-height:1.65}
 
-/* PROBLÈME */
 .prob-section{background:var(--noir);padding:4rem 1.5rem}
 .container{max-width:1100px;margin:0 auto;width:100%}
 .prob-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.25rem;margin-top:2rem}
@@ -87,17 +78,18 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .pack-name{font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:var(--texte);margin-bottom:.25rem}
 .pack-price{font-size:clamp(2.2rem,5vw,3rem);font-weight:900;color:var(--blanc);margin-bottom:1.5rem;line-height:1}
 .pack-price span{font-size:.95rem;font-weight:400;color:var(--texte)}
-.pack ul{list-style:none;margin-bottom:1.75rem}
-.pack ul li{padding:.4rem 0;border-bottom:1px solid #2a2a2a;font-size:.875rem;color:var(--texte);display:flex;gap:.6rem;align-items:flex-start}
-.pack ul li::before{content:"✓";color:var(--corail);font-weight:700;flex-shrink:0}
-.pack ul li.extra{color:var(--blanc)}
+.pack-items{list-style:none;margin-bottom:1.75rem}
+.pack-items li{padding:.4rem 0;border-bottom:1px solid #2a2a2a;font-size:.875rem;color:var(--texte);display:flex;gap:.6rem;align-items:flex-start}
+.pack-items li:last-child{border-bottom:none}
+.pack-items li::before{content:"✓";color:var(--corail);font-weight:700;flex-shrink:0}
+.pack-items li.extra{color:var(--blanc)}
+.pack-ou{text-align:center;color:var(--corail);font-weight:700;padding:.1rem 0;font-size:.95rem}
 .pack .btn{width:100%;text-align:center;padding:.75rem}
 .optional-box{background:#111;border:2px solid var(--corail);border-radius:12px;padding:1.75rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:2rem}
 .optional-box h3{font-size:1rem;font-weight:700}
 .optional-box p{font-size:.875rem;color:var(--texte)}
 .optional-price{font-size:1.8rem;font-weight:900;color:var(--corail);white-space:nowrap}
 
-/* FORMULAIRE */
 .form-section{background:var(--noir);padding:4rem 1.5rem}
 .form-wrap{background:#111;border:1px solid #2a2a2a;border-radius:16px;padding:clamp(1.5rem,5vw,3rem);max-width:640px;margin:0 auto}
 .form-wrap h2{font-size:clamp(1.4rem,4vw,1.8rem);font-weight:800;margin-bottom:.4rem}
@@ -113,7 +105,6 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .form-submit{width:100%;padding:.9rem;font-size:.95rem;margin-top:.4rem}
 .success-msg{display:none;background:#1a2e1a;border:1px solid #2d5a2d;color:#7bc47b;padding:1rem 1.5rem;border-radius:8px;text-align:center;margin-top:1rem;font-size:.9rem}
 
-/* FOOTER */
 footer{background:#080808;border-top:1px solid #1a1a1a;padding:1.75rem 1.5rem;text-align:center;color:#555;font-size:.82rem}
 footer span{color:var(--corail)}
 
@@ -153,7 +144,6 @@ footer span{color:var(--corail)}
   <a href="#contact" class="nav-cta" onclick="closeMenu()">Demander un devis</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
   <div>
     <div class="hero-badge">Communication clé en main pour les box CrossFit</div>
@@ -172,17 +162,15 @@ footer span{color:var(--corail)}
   </div>
 </section>
 
-<!-- VIDÉO PRÉSENTATION -->
 <section class="video-section">
   <p class="section-label">Qui sommes-nous</p>
-  <h2 class="section-title">Découvrez Field Media en vidéo</h2>
+  <h2 class="section-title">Découvrez Field Studio en vidéo</h2>
   <p class="section-sub">Une minute pour comprendre ce qu'on fait, comment on le fait, et pourquoi on le fait pour vous.</p>
-      <div class="video-wrapper">
-      <iframe src="https://www.youtube.com/embed/f1L5bXBio0s" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:16/9;display:block;border:none"></iframe>
-    </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/f1L5bXBio0s" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+  </div>
 </section>
 
-<!-- ÉQUIPE -->
 <div id="equipe">
   <div class="team-banner">
     <img src="https://i.postimg.cc/Sxjt9sk3/PACKAGE-(3).jpg" alt="Didier et Océane"/>
@@ -209,7 +197,6 @@ footer span{color:var(--corail)}
   </div>
 </div>
 
-<!-- PROBLÈME -->
 <section class="prob-section">
   <div class="container">
     <p class="section-label">Le constat</p>
@@ -225,48 +212,61 @@ footer span{color:var(--corail)}
 
 <div class="arrow-section">↓</div>
 
-<!-- PACKS -->
 <section class="packs-section" id="packs">
   <div class="container">
     <p class="section-label">Nos offres</p>
     <h2 class="section-title">Choisissez votre pack</h2>
-    <p class="section-sub">Trois niveaux d'accompagnement, un seul objectif : faire briller votre box sur les réseaux.</p>
+    <p class="section-sub" style="color:var(--texte);font-size:.95rem;margin-bottom:2.5rem">Trois niveaux d'accompagnement, un seul objectif : faire briller votre box sur les réseaux.</p>
     <div class="packs-grid">
+
+      <!-- ESSENTIEL -->
       <div class="pack">
         <p class="pack-name">Pack Essentiel</p>
-        <div class="pack-price">800€ <span>/ pack</span></div>
-        <ul>
-          <li>1 carrousel graphique</li>
-          <li>1 vidéo de présentation</li>
+        <div class="pack-price">680€ <span>HT</span></div>
+        <ul class="pack-items">
+          <li>1 vidéo de présentation de la salle avec témoignages (réel 40 sec à 1 min)</li>
+        </ul>
+        <div class="pack-ou">— OU —</div>
+        <ul class="pack-items">
+          <li>3 vidéos courtes (20 secs) pour Ads</li>
           <li>Script inclus</li>
         </ul>
         <a href="#contact" class="btn btn-outline">Je choisis ce pack</a>
       </div>
+
+      <!-- POPULAIRE -->
       <div class="pack popular">
         <div class="pack-badge">⭐ Le plus populaire</div>
         <p class="pack-name">Pack Populaire</p>
-        <div class="pack-price">1 900€ <span>/ pack</span></div>
-        <ul>
-          <li class="extra">3 carrousels graphiques</li>
-          <li class="extra">6 vidéos</li>
-          <li class="extra">Scripts inclus</li>
+        <div class="pack-price">1 780€ <span>HT</span></div>
+        <ul class="pack-items">
+          <li class="extra">1 carrousel graphique</li>
+          <li class="extra">1 vidéo de présentation + 3 vidéos courtes Ads (20 secs)</li>
+        </ul>
+        <div class="pack-ou">— OU —</div>
+        <ul class="pack-items">
+          <li class="extra">6 vidéos courtes (20 secs)</li>
           <li class="extra">50 photos d'ambiance retouchées</li>
+          <li class="extra">Scripts inclus</li>
         </ul>
         <a href="#contact" class="btn">Je choisis ce pack</a>
       </div>
+
+      <!-- PREMIUM -->
       <div class="pack">
         <p class="pack-name">Pack Premium</p>
-        <div class="pack-price">2 700€ <span>/ pack</span></div>
-        <ul>
+        <div class="pack-price">2 790€ <span>HT</span></div>
+        <ul class="pack-items">
           <li class="extra">3 carrousels graphiques</li>
-          <li class="extra">7 vidéos</li>
-          <li class="extra">Scripts inclus</li>
+          <li class="extra">1 vidéo de présentation + 6 vidéos courtes Ads (20 secs)</li>
           <li class="extra">80 photos d'ambiance retouchées</li>
-          <li class="extra">Écriture des captions</li>
-          <li class="extra">Programmation de tous les posts</li>
+          <li class="extra">Scripts inclus</li>
+          <li class="extra">Description des posts</li>
+          <li class="extra">Programmation des publications</li>
         </ul>
         <a href="#contact" class="btn btn-outline">Je choisis ce pack</a>
       </div>
+
     </div>
     <div class="optional-box">
       <div>
@@ -278,7 +278,6 @@ footer span{color:var(--corail)}
   </div>
 </section>
 
-<!-- FORMULAIRE -->
 <section class="form-section" id="contact">
   <div class="container">
     <div class="form-wrap">
@@ -296,9 +295,9 @@ footer span{color:var(--corail)}
           <label>Pack souhaité</label>
           <select name="pack" id="packSelect">
             <option value="">— Sélectionnez un pack —</option>
-            <option>Pack Essentiel – 800€</option>
-            <option>Pack Populaire – 1 900€</option>
-            <option>Pack Premium – 2 700€</option>
+            <option>Pack Essentiel – 680€ HT</option>
+            <option>Pack Populaire – 1 780€ HT</option>
+            <option>Pack Premium – 2 790€ HT</option>
             <option>Je ne sais pas encore</option>
           </select>
         </div>
@@ -312,37 +311,18 @@ footer span{color:var(--corail)}
 
 <footer>
   <img src="https://i.postimg.cc/QtqVV044/Field-Studio.png" alt="Field Studio" style="height:32px;margin:0 auto 1rem;opacity:.6"/>
-  <p><span>Field Media</span> · Communication clé en main pour les box CrossFit</p>
+  <p><span>Field Studio</span> · Communication clé en main pour les box CrossFit</p>
   <p style="margin-top:.4rem">© 2025 · Fait avec passion depuis le Nord</p>
 </footer>
 
 <script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
-function loadVideo(el){
-  // Remplacez l'URL ici par votre vrai lien YouTube embed
-  const url='https://www.youtube.com/embed/VOTRE_ID?autoplay=1';
-  const iframe=document.createElement('iframe');
-  iframe.src=url;iframe.allowFullscreen=true;
-  iframe.allow='autoplay; encrypted-media';
-  el.parentNode.replaceChild(iframe,el);
-}
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
   a.addEventListener('click',e=>{
     e.preventDefault();closeMenu();
     const el=document.querySelector(a.getAttribute('href'));
     if(el) el.scrollIntoView({behavior:'smooth'});
-  });
-});
-document.querySelectorAll('.pack a[href="#contact"]').forEach(link=>{
-  link.addEventListener('click',()=>{
-    const packName=link.closest('.pack').querySelector('.pack-name').textContent;
-    setTimeout(()=>{
-      const sel=document.getElementById('packSelect');
-      for(let i=0;i<sel.options.length;i++){
-        if(sel.options[i].text.toLowerCase().includes(packName.toLowerCase().replace('pack ',''))){sel.selectedIndex=i;break;}
-      }
-    },600);
   });
 });
 document.getElementById('contactForm').addEventListener('submit',async function(e){
