@@ -3,14 +3,13 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Exemples – Field Media</title>
+<title>Exemples – Field Studio</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--noir:#0f0f0f;--gris:#1a1a1a;--corail:#94443a;--corail2:#7a3830;--bleu:#044982;--bleu2:#033a6a;--blanc:#f5f5f5;--texte:#d0d0d0}
 body{background:var(--noir);color:var(--blanc);font-family:'Segoe UI',system-ui,sans-serif;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 
-/* NAV */
 nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filter:blur(8px);z-index:100;padding:.75rem 1.5rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #222}
 .logo img{height:38px;width:auto;display:block}
 .nav-links{display:flex;gap:1.5rem;list-style:none}
@@ -25,32 +24,35 @@ nav{position:fixed;top:0;width:100%;background:rgba(15,15,15,0.95);backdrop-filt
 .mobile-menu .nav-cta{text-align:center;padding:.75rem;border-radius:4px;border:none}
 .mobile-menu.open{display:flex}
 
-/* HERO PAGE */
 .page-hero{padding:7rem 1.5rem 1.5rem;text-align:center;background:radial-gradient(ellipse at 50% 0%,#1f1008 0%,#0f0f0f 60%)}
 .page-hero-badge{display:inline-block;background:#1f1008;border:1px solid var(--corail);color:var(--corail);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;margin-bottom:1rem}
-.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:.35rem}
+.page-hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:.35rem;line-height:1}
 .page-hero h1 span{color:var(--corail)}
 .page-hero p{color:var(--texte);max-width:520px;margin:0 auto;font-size:.95rem}
 
-/* SECTIONS */
 section{padding:4rem 1.5rem}
 .container{max-width:1100px;margin:0 auto;width:100%}
 .section-label{font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--corail);margin-bottom:.6rem}
 .section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;margin-bottom:.6rem}
 .section-sub{color:var(--texte);font-size:.9rem;margin-bottom:2rem;max-width:560px}
 
-/* VIDÉO ADS */
-.video-wrap{position:relative;max-width:860px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
-.video-placeholder{width:100%;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;background:#111;cursor:pointer}
-.play-icon{width:72px;height:72px;border-radius:50%;background:var(--corail);display:flex;align-items:center;justify-content:center}
-.play-icon svg{width:28px;height:28px;fill:#fff;margin-left:5px}
-.video-placeholder p{color:var(--texte);font-size:.9rem;text-align:center}
-.video-wrap iframe{width:100%;aspect-ratio:16/9;border:none;display:block}
+/* AVANT / APRÈS */
+.avantapres-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:1100px;margin:0 auto}
+.aa-block{border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
+.aa-label{padding:.6rem 1rem;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-align:center}
+.aa-label.avant{background:#222;color:#888}
+.aa-label.apres{background:var(--corail);color:#fff}
+.aa-block img{width:100%;display:block}
+.aa-caption{padding:.75rem 1rem;font-size:.8rem;color:var(--texte);text-align:center;border-top:1px solid #222}
 
-/* CARROUSEL TEMPLATES */
+/* VIDÉO */
+.video-wrap{position:relative;max-width:400px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
+.video-wrap iframe{width:100%;aspect-ratio:9/16;border:none;display:block}
+
+/* CARROUSEL */
 .carousel-section{background:var(--gris)}
 .carousel-outer{position:relative;overflow:hidden;max-width:1100px;margin:0 auto}
-.carousel-track{display:flex;gap:1rem;transition:transform .4s ease;will-change:transform}
+.carousel-track{display:flex;gap:1rem;transition:transform .4s ease}
 .carousel-slide{min-width:calc(33.333% - .67rem);border-radius:10px;overflow:hidden;border:1px solid #333;background:#111;aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.75rem;color:#444;font-size:.85rem;text-align:center;padding:1rem;flex-shrink:0}
 .carousel-slide .slide-icon{font-size:2rem;opacity:.4}
 .carousel-slide p{opacity:.5}
@@ -62,28 +64,12 @@ section{padding:4rem 1.5rem}
 .carousel-dots span{width:8px;height:8px;border-radius:50%;background:#444;cursor:pointer;transition:background .2s}
 .carousel-dots span.active{background:var(--corail)}
 
-/* AVANT / APRÈS */
-.avantapres-section{background:var(--noir)}
-.avantapres-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;margin:0 auto}
-.aa-block{border-radius:12px;overflow:hidden;border:1px solid #333;background:#111}
-.aa-block img{width:100%;display:block;object-fit:contain;max-height:400px;background:#111}
-.aa-label{padding:.6rem 1rem;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;font-weight:700;text-align:center}
-.aa-label.avant{background:#222;color:#888}
-.aa-label.apres{background:var(--corail);color:#fff}
-.aa-feed{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;padding:2px}
-.aa-post{aspect-ratio:1;background:#1a1a1a;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#333}
-.aa-post.placeholder-avant{background:#181818}
-.aa-post.placeholder-apres{background:#2a1a10}
-.aa-caption{padding:.75rem 1rem;font-size:.8rem;color:var(--texte);text-align:center;border-top:1px solid #222}
-
-/* CTA BAS */
 .cta-bottom{background:var(--gris);padding:4rem 1.5rem;text-align:center}
 .cta-bottom h2{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:900;margin-bottom:.75rem}
 .cta-bottom p{color:var(--texte);margin-bottom:2rem;font-size:.95rem}
 .btn{display:inline-block;background:var(--bleu);color:#fff;padding:.8rem 2rem;border-radius:4px;font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:background .2s,transform .1s}
 .btn:hover{background:var(--bleu2);transform:translateY(-1px)}
 
-/* FOOTER */
 footer{background:#080808;border-top:1px solid #1a1a1a;padding:1.75rem 1.5rem;text-align:center;color:#555;font-size:.82rem}
 footer span{color:var(--corail)}
 
@@ -119,25 +105,40 @@ footer span{color:var(--corail)}
   <a href="index.html#contact" class="nav-cta" onclick="closeMenu()">Demander un devis</a>
 </div>
 
-<!-- HERO PAGE -->
 <div class="page-hero">
   <div class="page-hero-badge">Nos réalisations</div>
-  <h1 style="line-height:1">Ce qu'on crée pour<br/><span>vos box</span></h1>
-  <p>Vidéos Ads, templates Instagram, refonte de feed — voici un aperçu concret de ce que Field Media apporte à vos réseaux.</p>
+  <h1>Ce qu'on crée pour<br/><span>vos box</span></h1>
+  <p>Vidéos, templates Instagram, refonte de feed — voici un aperçu concret de ce que Field Studio apporte à vos réseaux.</p>
 </div>
 
-<!-- VIDÉO ADS -->
+<!-- VIDÉO PROMO -->
+<section style="background:var(--gris)">
+  <div class="container">
+    <p class="section-label">Vidéo promotionnelle</p>
+    <h2 class="section-title">Exemple de vidéo promo — Collection limitée T-shirt</h2>
+    <p class="section-sub">Un exemple concret de vidéo courte pour promouvoir la collection de t-shirts de votre box.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/qQK4G8k1uDo" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT / APRÈS -->
 <section style="background:var(--noir)">
   <div class="container">
-    <p class="section-label">Vidéo publicitaire</p>
-    <h2 class="section-title">Exemple de vidéo Ads</h2>
-    <p class="section-sub">Une vidéo courte et impactante pour convertir des prospects en nouveaux membres.</p>
-    <div class="video-wrap">
-      <div class="video-placeholder" id="adsVideo" onclick="loadVideo('adsVideo')">
-        <div class="play-icon">
-          <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-        </div>
-        <p>Votre vidéo Ads ici<br/><span style="font-size:.78rem;color:#555">Remplacez par votre lien YouTube / Vimeo</span></p>
+    <p class="section-label">Avant / Après</p>
+    <h2 class="section-title">Refonte de feed Instagram</h2>
+    <p class="section-sub">Ce que ça change visuellement quand on prend en main votre communication.</p>
+    <div class="avantapres-grid">
+      <div class="aa-block">
+        <div class="aa-label avant">Avant</div>
+        <img src="https://i.postimg.cc/G8h67cvB/4.jpg" style="width:100%;display:block"/>
+        <div class="aa-caption">Feed non uniforme, photos sans cohérence visuelle</div>
+      </div>
+      <div class="aa-block">
+        <div class="aa-label apres">Après</div>
+        <img src="https://res.cloudinary.com/twdjskxh/image/upload/f_auto,q_auto/5_ge70b4" style="width:100%;display:block"/>
+        <div class="aa-caption">Feed uniforme, identité visuelle forte et cohérente</div>
       </div>
     </div>
   </div>
@@ -153,41 +154,18 @@ footer span{color:var(--corail)}
   <div class="carousel-outer">
     <button class="carousel-btn prev" onclick="slide(-1)">‹</button>
     <div class="carousel-track" id="track">
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 1<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 2<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 3<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 4<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 5<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 6<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 7<br/>Slide carrousel</p></div>
-      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 8<br/>Slide carrousel</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 1</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 2</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 3</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 4</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 5</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 6</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 7</p></div>
+      <div class="carousel-slide"><div class="slide-icon">🖼</div><p>Template 8</p></div>
     </div>
     <button class="carousel-btn next" onclick="slide(1)">›</button>
   </div>
   <div class="carousel-dots" id="dots"></div>
-</section>
-
-<!-- AVANT / APRÈS -->
-<section class="avantapres-section">
-  <div class="container">
-    <p class="section-label">Avant / Après</p>
-    <h2 class="section-title">Refonte de feed Instagram</h2>
-    <p class="section-sub">Ce que ça change visuellement quand on prend en main votre communication.</p>
-    <div class="avantapres-grid">
-      <!-- AVANT -->
-      <div class="aa-block">
-        <div class="aa-label avant">Avant</div>
-        <img src="https://res.cloudinary.com/twdjskxh/image/upload/f_auto,q_auto/4_vtiu8a" style="width:100%;display:block"/>
-        <div class="aa-caption">Feed non uniforme, photos sans cohérence visuelle</div>
-      </div>
-      <!-- APRÈS -->
-      <div class="aa-block">
-        <div class="aa-label apres">Après</div>
-        <img src="https://res.cloudinary.com/twdjskxh/image/upload/f_auto,q_auto/5_ge70b4" style="width:100%;display:block"/>
-        <div class="aa-caption">Feed uniforme, identité visuelle forte et cohérente</div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- CTA -->
@@ -200,8 +178,8 @@ footer span{color:var(--corail)}
 </div>
 
 <footer>
-  <img src="https://i.imgur.com/9bk9Hx3.png" alt="Field Media" style="height:32px;margin:0 auto 1rem;opacity:.6"/>
-  <p><span>Field Media</span> · Communication clé en main pour les box CrossFit</p>
+  <img src="https://i.postimg.cc/QtqVV044/Field-Studio.png" alt="Field Studio" style="height:32px;margin:0 auto 1rem;opacity:.6"/>
+  <p><span>Field Studio</span> · Communication clé en main pour les box CrossFit</p>
   <p style="margin-top:.4rem">© 2025 · Fait avec passion depuis le Nord</p>
 </footer>
 
@@ -209,30 +187,16 @@ footer span{color:var(--corail)}
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
-function loadVideo(id){
-  const url='https://www.youtube.com/embed/VOTRE_ID?autoplay=1';
-  const el=document.getElementById(id);
-  const iframe=document.createElement('iframe');
-  iframe.src=url;iframe.allowFullscreen=true;
-  iframe.allow='autoplay; encrypted-media';
-  el.parentNode.replaceChild(iframe,el);
-}
-
-// CARROUSEL
 const track=document.getElementById('track');
 const slides=track.querySelectorAll('.carousel-slide');
 const dotsEl=document.getElementById('dots');
-let cur=0,perView=3;
+let cur=0;
 
-function getPerView(){
-  return window.innerWidth<=480?1:window.innerWidth<=768?2:3;
-}
-const total=Math.ceil(slides.length/getPerView());
+function getPerView(){return window.innerWidth<=480?1:window.innerWidth<=768?2:3}
 
 function buildDots(){
   dotsEl.innerHTML='';
-  const pv=getPerView();
-  const t=Math.ceil(slides.length/pv);
+  const t=Math.ceil(slides.length/getPerView());
   for(let i=0;i<t;i++){
     const d=document.createElement('span');
     if(i===cur)d.classList.add('active');
@@ -242,16 +206,14 @@ function buildDots(){
 }
 
 function updateCarousel(){
-  perView=getPerView();
+  const pv=getPerView();
   const slideW=slides[0].getBoundingClientRect().width;
-  const gap=16;
-  track.style.transform=`translateX(-${cur*(slideW+gap)*perView}px)`;
+  track.style.transform=`translateX(-${cur*(slideW+16)*pv}px)`;
   document.querySelectorAll('.carousel-dots span').forEach((d,i)=>d.classList.toggle('active',i===cur));
 }
 
 function slide(dir){
-  perView=getPerView();
-  const t=Math.ceil(slides.length/perView);
+  const t=Math.ceil(slides.length/getPerView());
   cur=(cur+dir+t)%t;
   updateCarousel();
 }
