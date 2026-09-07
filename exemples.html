@@ -112,7 +112,46 @@ footer span{color:var(--corail)}
   <p>Vidéos, templates Instagram, refonte de feed — voici un aperçu concret de ce que Field Studio apporte à vos réseaux.</p>
 </div>
 
-<!-- VIDÉO PROMO -->
+<!-- VIDÉO ADS -->
+<section style="background:var(--gris)">
+  <div class="container">
+    <p class="section-label">Vidéo publicitaire</p>
+    <h2 class="section-title">Exemple de vidéo Ads</h2>
+    <p class="section-sub">Une vidéo courte et impactante pour convertir des prospects en nouveaux membres.</p>
+    <div class="video-wrap">
+      <iframe src="https://www.youtube.com/embed/ufCdzNU5epE" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- CARROUSEL VIDÉOS TÉMOIGNAGES -->
+<section style="background:var(--noir)">
+  <div class="container">
+    <p class="section-label">Témoignages</p>
+    <h2 class="section-title">Ils témoignent pour leur box</h2>
+    <p class="section-sub">Des vidéos courtes et authentiques pour mettre en avant la communauté de votre box.</p>
+  </div>
+  <div style="position:relative;max-width:400px;margin:0 auto;padding:0 1.25rem">
+    <div style="overflow:hidden;border-radius:12px">
+      <div id="videoTrack" style="display:flex;transition:transform .4s ease">
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/hswiJRGiTvg" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/dS5nxaAWG1o" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/zUGF5U4zM-8" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+      </div>
+    </div>
+    <button onclick="slideVideo(-1)" style="position:absolute;top:50%;left:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">‹</button>
+    <button onclick="slideVideo(1)" style="position:absolute;top:50%;right:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">›</button>
+    <div id="videoDots" style="display:flex;justify-content:center;gap:.5rem;margin-top:1rem"></div>
+  </div>
+</section>
+
+<!-- VIDÉO PROMO TSHIRT -->
 <section style="background:var(--gris)">
   <div class="container">
     <p class="section-label">Vidéo promotionnelle</p>
@@ -147,7 +186,32 @@ footer span{color:var(--corail)}
 
 
 
-<div class="cta-bottom">
+<!-- CARROUSEL VIDÉOS TÉMOIGNAGES -->
+<section style="background:var(--gris)">
+  <div class="container">
+    <p class="section-label">Témoignages</p>
+    <h2 class="section-title">Ils témoignent pour leur box</h2>
+    <p class="section-sub">Des vidéos courtes et authentiques pour mettre en avant la communauté de votre box.</p>
+  </div>
+  <div style="position:relative;max-width:400px;margin:0 auto;padding:0 1.25rem">
+    <div style="overflow:hidden;border-radius:12px">
+      <div id="videoTrack" style="display:flex;transition:transform .4s ease">
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/hswiJRGiTvg" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/dS5nxaAWG1o" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
+          <iframe src="https://www.youtube.com/embed/zUGF5U4zM-8" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+        </div>
+      </div>
+    </div>
+    <button onclick="slideVideo(-1)" style="position:absolute;top:50%;left:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">‹</button>
+    <button onclick="slideVideo(1)" style="position:absolute;top:50%;right:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">›</button>
+    <div id="videoDots" style="display:flex;justify-content:center;gap:.5rem;margin-top:1rem"></div>
+  </div>
+</section>
   <div class="container">
     <h2>Vous voulez le même résultat<br/>pour votre box ?</h2>
     <p>Demandez votre devis gratuit, on vous répond sous 24h.</p>
@@ -196,8 +260,24 @@ function slide(dir){
   updateCarousel();
 }
 
-buildDots();
-window.addEventListener('resize',()=>{cur=0;buildDots();updateCarousel()});
+let vCur=0;
+const vTrack=document.getElementById('videoTrack');
+const vDots=document.getElementById('videoDots');
+const vTotal=3;
+for(let i=0;i<vTotal;i++){
+  const d=document.createElement('span');
+  d.style.cssText='width:7px;height:7px;border-radius:50%;background:'+(i===0?'#94443a':'#444')+';cursor:pointer;display:inline-block';
+  d.onclick=()=>{vCur=i;updateVideo()};
+  vDots.appendChild(d);
+}
+function updateVideo(){
+  vTrack.style.transform=`translateX(-${vCur*100}%)`;
+  vDots.querySelectorAll('span').forEach((d,i)=>d.style.background=i===vCur?'#94443a':'#444');
+}
+function slideVideo(dir){
+  vCur=(vCur+dir+vTotal)%vTotal;
+  updateVideo();
+}
 </script>
 </body>
 </html>
