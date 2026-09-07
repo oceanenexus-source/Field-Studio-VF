@@ -130,24 +130,17 @@ footer span{color:var(--corail)}
     <p class="section-label">Témoignages</p>
     <h2 class="section-title">Ils témoignent pour leur box</h2>
     <p class="section-sub">Des vidéos courtes et authentiques pour mettre en avant la communauté de votre box.</p>
-  </div>
-  <div style="position:relative;max-width:400px;margin:0 auto;padding:0 1.25rem">
-    <div style="overflow:hidden;border-radius:12px">
-      <div id="videoTrack" style="display:flex;transition:transform .4s ease">
-        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
-          <iframe src="https://www.youtube.com/embed/hswiJRGiTvg" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
-        </div>
-        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
-          <iframe src="https://www.youtube.com/embed/dS5nxaAWG1o" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
-        </div>
-        <div style="min-width:100%;flex-shrink:0;border-radius:12px;overflow:hidden;border:1px solid #333">
-          <iframe src="https://www.youtube.com/embed/zUGF5U4zM-8" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
-        </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1100px;margin:0 auto">
+      <div style="border-radius:12px;overflow:hidden;border:1px solid #333">
+        <iframe src="https://www.youtube.com/embed/hswiJRGiTvg" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:1px solid #333">
+        <iframe src="https://www.youtube.com/embed/dS5nxaAWG1o" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
+      </div>
+      <div style="border-radius:12px;overflow:hidden;border:1px solid #333">
+        <iframe src="https://www.youtube.com/embed/zUGF5U4zM-8" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" style="width:100%;aspect-ratio:9/16;display:block;border:none"></iframe>
       </div>
     </div>
-    <button onclick="slideVideo(-1)" style="position:absolute;top:50%;left:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">‹</button>
-    <button onclick="slideVideo(1)" style="position:absolute;top:50%;right:0;transform:translateY(-50%);background:var(--corail);border:none;color:#fff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;z-index:2">›</button>
-    <div id="videoDots" style="display:flex;justify-content:center;gap:.5rem;margin-top:1rem"></div>
   </div>
 </section>
 
