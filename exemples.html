@@ -253,24 +253,7 @@ function slide(dir){
   updateCarousel();
 }
 
-let vCur=0;
-const vTrack=document.getElementById('videoTrack');
-const vDots=document.getElementById('videoDots');
-const vTotal=3;
-for(let i=0;i<vTotal;i++){
-  const d=document.createElement('span');
-  d.style.cssText='width:7px;height:7px;border-radius:50%;background:'+(i===0?'#94443a':'#444')+';cursor:pointer;display:inline-block';
-  d.onclick=()=>{vCur=i;updateVideo()};
-  vDots.appendChild(d);
-}
-function updateVideo(){
-  vTrack.style.transform=`translateX(-${vCur*100}%)`;
-  vDots.querySelectorAll('span').forEach((d,i)=>d.style.background=i===vCur?'#94443a':'#444');
-}
-function slideVideo(dir){
-  vCur=(vCur+dir+vTotal)%vTotal;
-  updateVideo();
-}
+
 </script>
 </body>
 </html>
